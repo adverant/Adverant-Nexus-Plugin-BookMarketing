@@ -1,0 +1,255 @@
+{
+  "name": "nexus-bookmarketing",
+  "displayName": "BookMarketing - AI-Driven Marketing Campaigns",
+  "version": "1.0.0",
+  "description": "Complete book marketing automation with Amazon Ads, Facebook Ads, BookBub, email marketing, and social media management. AI-powered campaign optimization for maximum ROI.",
+  "developer": {
+    "name": "Adverant",
+    "url": "https://adverant.ai",
+    "email": "plugins@adverant.ai",
+    "verified": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adverant/Adverant-Nexus-Plugin-BookMarketing"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "book-marketing",
+    "amazon-ads",
+    "facebook-ads",
+    "bookbub",
+    "email-marketing",
+    "social-media",
+    "campaign-automation"
+  ],
+  "nexus": {
+    "minVersion": "1.0.0",
+    "executionMode": "mcp_container",
+    "isolationLevel": 2,
+    "capabilities": [
+      "campaign-management",
+      "amazon-ads",
+      "facebook-ads",
+      "bookbub-integration",
+      "email-automation",
+      "social-scheduling",
+      "analytics-reporting",
+      "crm-integration"
+    ],
+    "permissions": [
+      "network:advertising.amazon.com",
+      "network:graph.facebook.com",
+      "network:api.bookbub.com",
+      "network:api.mailchimp.com",
+      "network:api.netgalley.com",
+      "filesystem:temp",
+      "service:mageagent",
+      "service:nexuscrm"
+    ],
+    "entrypoint": "dist/server.js",
+    "healthCheck": "/marketing/api/health",
+    "readinessCheck": "/marketing/api/health/ready",
+    "livenessCheck": "/marketing/api/health/live"
+  },
+  "resources": {
+    "cpuMillicores": 1000,
+    "memoryMB": 2048,
+    "diskGB": 10,
+    "timeoutMs": 300000,
+    "maxConcurrentJobs": 20
+  },
+  "api": {
+    "version": "v1",
+    "basePath": "/marketing/api",
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/campaigns",
+        "description": "Create marketing campaign",
+        "rateLimit": "10/minute"
+      },
+      {
+        "method": "GET",
+        "path": "/campaigns/:id",
+        "description": "Get campaign details"
+      },
+      {
+        "method": "GET",
+        "path": "/campaigns/:id/analytics",
+        "description": "Get campaign analytics"
+      },
+      {
+        "method": "PUT",
+        "path": "/campaigns/:id/pause",
+        "description": "Pause campaign"
+      },
+      {
+        "method": "POST",
+        "path": "/ads/amazon",
+        "description": "Create Amazon Ads campaign"
+      },
+      {
+        "method": "POST",
+        "path": "/ads/facebook",
+        "description": "Create Facebook campaign"
+      },
+      {
+        "method": "POST",
+        "path": "/ads/bookbub/featured-deal",
+        "description": "Apply for BookBub Featured Deal"
+      },
+      {
+        "method": "POST",
+        "path": "/email/sequences",
+        "description": "Create email sequence"
+      },
+      {
+        "method": "POST",
+        "path": "/social/campaigns",
+        "description": "Schedule social campaign"
+      },
+      {
+        "method": "GET",
+        "path": "/analytics/dashboard/:projectId",
+        "description": "Get dashboard data"
+      }
+    ]
+  },
+  "pricing": {
+    "model": "hybrid",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "starter",
+        "displayName": "Starter",
+        "priceMonthly": 3900,
+        "priceYearly": 39000,
+        "limits": {
+          "campaignsPerMonth": 2,
+          "adSpendLimit": 50000,
+          "emailSubscribers": 1000,
+          "socialAccounts": 2
+        },
+        "features": [
+          "basic-campaigns",
+          "email-marketing",
+          "social-scheduling"
+        ]
+      },
+      {
+        "name": "author",
+        "displayName": "Author",
+        "priceMonthly": 9900,
+        "priceYearly": 99000,
+        "limits": {
+          "campaignsPerMonth": 10,
+          "adSpendLimit": 250000,
+          "emailSubscribers": 10000,
+          "socialAccounts": 5
+        },
+        "features": [
+          "amazon-ads",
+          "facebook-ads",
+          "advanced-email",
+          "crm-integration"
+        ]
+      },
+      {
+        "name": "publisher",
+        "displayName": "Pro Publisher",
+        "priceMonthly": 29900,
+        "priceYearly": 299000,
+        "limits": {
+          "campaignsPerMonth": 50,
+          "adSpendLimit": 1000000,
+          "emailSubscribers": 50000,
+          "socialAccounts": 15
+        },
+        "features": [
+          "bookbub-integration",
+          "netgalley-integration",
+          "bulk-campaigns",
+          "advanced-analytics"
+        ],
+        "popular": true
+      },
+      {
+        "name": "enterprise",
+        "displayName": "Enterprise",
+        "priceMonthly": 79900,
+        "priceYearly": 799000,
+        "limits": {
+          "campaignsPerMonth": -1,
+          "adSpendLimit": -1,
+          "emailSubscribers": -1,
+          "socialAccounts": -1
+        },
+        "features": [
+          "everything",
+          "white-label-reports",
+          "dedicated-support",
+          "custom-integrations"
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "tier": 2,
+    "type": "template",
+    "capabilities": [
+      {
+        "type": "template",
+        "template": "marketing-dashboard",
+        "config": {
+          "sections": ["campaigns", "analytics", "email", "social"]
+        }
+      }
+    ],
+    "navigation": {
+      "location": "dedicated-tab",
+      "icon": "megaphone",
+      "label": "Marketing"
+    }
+  },
+  "marketplace": {
+    "category": "marketing",
+    "subcategory": "campaign-management",
+    "tags": [
+      "book-marketing",
+      "advertising",
+      "email-marketing",
+      "social-media",
+      "analytics",
+      "roi-tracking"
+    ],
+    "featured": true,
+    "documentation": "https://docs.adverant.ai/plugins/bookmarketing",
+    "support": {
+      "email": "support@adverant.ai",
+      "docs": "https://docs.adverant.ai/plugins/bookmarketing",
+      "chat": "https://discord.gg/adverant"
+    }
+  },
+  "integrations": {
+    "required": [
+      {
+        "service": "mageagent",
+        "minVersion": "1.0.0",
+        "purpose": "AI-generated marketing copy"
+      }
+    ],
+    "optional": [
+      {
+        "service": "nexuscrm",
+        "minVersion": "1.0.0",
+        "purpose": "Reader relationship management"
+      },
+      {
+        "service": "prosecreator",
+        "minVersion": "1.0.0",
+        "purpose": "Book project integration"
+      }
+    ]
+  }
+}

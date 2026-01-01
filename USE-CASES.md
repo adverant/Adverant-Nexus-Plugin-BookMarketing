@@ -134,8 +134,8 @@ class BookLaunchCampaign {
 ### Business Impact
 
 - **Coordinated multi-channel launch** with unified tracking
-- **3x higher launch week sales** compared to manual campaigns
-- **50% reduction in wasted ad spend** through AI optimization
+- **Improved launch momentum** through synchronized campaigns
+- **Reduced wasted ad spend** through optimization
 - **Automated rank tracking** and budget reallocation
 
 ---
@@ -243,9 +243,9 @@ class AmazonAdsOptimizer:
 
 ### Business Impact
 
-- **40% reduction in ACOS** through AI keyword management
-- **2x more converting keywords** discovered automatically
-- **Hours saved weekly** on manual bid adjustments
+- **Lower ACOS** through AI keyword management
+- **More converting keywords** discovered automatically
+- **Time saved** on manual bid adjustments
 - **Real-time optimization** vs. weekly manual reviews
 
 ---
@@ -362,7 +362,7 @@ class BookBubOptimizer {
 
 ### Business Impact
 
-- **2x higher acceptance rate** with optimized applications
+- **Improved application quality** with AI optimization
 - **Coordinated promotion** maximizes deal impact
 - **Automatic follow-up** captures new readers for long-term value
 - **Data-driven category selection** targets best opportunities
@@ -517,8 +517,8 @@ class EmailMarketingAutomation:
 
 ### Business Impact
 
-- **40% higher open rates** with AI-optimized subject lines
-- **3x conversion rate** on welcome sequences vs. single emails
+- **Higher open rates** with AI-optimized subject lines
+- **Improved conversion rates** on welcome sequences vs. single emails
 - **Automated list hygiene** maintains deliverability
 - **Behavior-based branching** personalizes the reader journey
 
